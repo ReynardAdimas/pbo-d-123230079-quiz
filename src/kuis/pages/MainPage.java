@@ -1,7 +1,7 @@
 package kuis.pages;
 
 import java.awt.*;
-import java.awt.desktop.OpenFilesEvent;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
@@ -22,7 +22,6 @@ public class MainPage extends JFrame implements ItemListener, ActionListener{
     private JScrollPane sp;
     private ButtonGroup grup; 
     private ArrayList<String[]> data;
-    private JCheckBox cekbok;
     public MainPage(String username){
         super("Input Member by " + username);
         setLayout(new BorderLayout(0,0)); 
@@ -51,7 +50,7 @@ public class MainPage extends JFrame implements ItemListener, ActionListener{
         eksportBtn = new JButton("Export to Txt"); 
         eksportBtn.addActionListener(this);
         importBtn = new JButton("Import from Txt"); 
-        importBtn.addActionListener(this);
+       
         
         panel4 = new JPanel();
         panel3.add(rb1);
@@ -79,7 +78,6 @@ public class MainPage extends JFrame implements ItemListener, ActionListener{
         
         add(panel1, BorderLayout.NORTH);
         add(panel2, BorderLayout.CENTER); 
-        add(cekbok, BorderLayout.SOUTH);
         pack();
         setSize(600,600); 
         setResizable(true);
@@ -87,14 +85,6 @@ public class MainPage extends JFrame implements ItemListener, ActionListener{
         setVisible(true);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 }
-
-    @Override
-    public void itemStateChanged(ItemEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-//    public void bacaFile(){
-//        ta.read(new FileWriter(JDesktopPane.POPUP_LAYER));
-//    }
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == btnSave)
@@ -126,10 +116,11 @@ public class MainPage extends JFrame implements ItemListener, ActionListener{
                 ex.printStackTrace();
             }
         } 
-        if(e.getSource()==importBtn)
-        {
-            //bacaFile();
-        }
     } 
+
+    @Override
+    public void itemStateChanged(ItemEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
 }

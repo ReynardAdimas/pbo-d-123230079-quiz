@@ -56,10 +56,11 @@ public class LoginPage extends JFrame implements ActionListener {
             String pass = new String(password.getPassword()); 
             if((!username.getText().isEmpty() && pass.equals("if-d"))){
                 new MainPage(username.getText()); 
+                System.out.println("p");
                 dispose();
             }
             else{
-                JOptionPane.showMessageDialog(null, "Gagal Login, Pastikan USername Terisi & Password Sesuai","Error",JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Gagal Login, Pastikan Username Terisi & Password Sesuai","Error",JOptionPane.ERROR_MESSAGE);
                 username.setText("");
                 password.setText("");
             }
